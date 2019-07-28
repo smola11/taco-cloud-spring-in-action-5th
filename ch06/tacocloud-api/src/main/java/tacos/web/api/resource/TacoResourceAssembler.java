@@ -1,7 +1,8 @@
-package tacos.web.api;
+package tacos.web.api.resource;
 
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 import tacos.Taco;
+import tacos.web.api.DesignTacoController;
 
 public class TacoResourceAssembler extends ResourceAssemblerSupport<Taco, TacoResource> {
 

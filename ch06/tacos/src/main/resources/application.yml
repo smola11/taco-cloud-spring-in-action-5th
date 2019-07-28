@@ -16,6 +16,7 @@ taco:
 #  level:
 #    org.springframework.data.rest: debug
 
+# Sets the base path for Spring Data REST endpoints
 spring:
   data:
     rest:

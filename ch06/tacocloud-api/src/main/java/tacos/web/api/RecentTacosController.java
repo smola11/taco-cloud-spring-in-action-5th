@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import tacos.Taco;
 import tacos.data.TacoRepository;
+import tacos.web.api.resource.TacoResource;
+import tacos.web.api.resource.TacoResourceAssembler;
 
 @RepositoryRestController
 public class RecentTacosController {
