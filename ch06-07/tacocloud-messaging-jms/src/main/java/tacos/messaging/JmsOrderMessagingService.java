@@ -5,6 +5,9 @@ import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 import tacos.Order;
 
+import javax.jms.JMSException;
+import javax.jms.Message;
+
 @Service
 public class JmsOrderMessagingService implements OrderMessagingService {
 
@@ -17,10 +20,12 @@ public class JmsOrderMessagingService implements OrderMessagingService {
 
     @Override
     public void sendOrder(Order order) {
+        jmsTemplate.convertAndSend("tacocloud.order.queue", order, this::addOrderSource);
+    }
 
-        jmsTemplate.send(session -> session.createObjectMessage(order));
-
-
+    private Message addOrderSource(Message message) throws JMSException {
+        message.setStringProperty("X_ORDER_SOURCE", "WEB");
+        return message;
     }
 //    OLD VERSION WITHOUT LAMBDAS
 //    @Override
