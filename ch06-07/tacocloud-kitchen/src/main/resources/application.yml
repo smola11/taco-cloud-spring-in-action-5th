@@ -1,6 +1,10 @@
 server:
   port: 8081
 
+spring:
+  profiles:
+    active: jms-template
+
 ---
 spring:
   profiles: jms-template, jms-listener
