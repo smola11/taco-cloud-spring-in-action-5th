@@ -16,8 +16,7 @@ public class FluxTransformingTests {
 
   @Test
   public void skipAFew() {
-    Flux<String> countFlux = Flux.just(
-        "one", "two", "skip a few", "ninety nine", "one hundred")
+    Flux<String> countFlux = Flux.just("one", "two", "skip a few", "ninety nine", "one hundred")
         .skip(3);
    
     StepVerifier.create(countFlux)

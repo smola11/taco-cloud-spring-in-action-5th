@@ -75,10 +75,10 @@ public class FluxMergingTests {
     public void firstFlux() {
         // delay needed to "slow down" the slow Flux
 
-        Flux<String> slowFlux = Flux.just("tortoise", "snail", "sloth")
-                .delaySubscription(Duration.ofMillis(100));
+        Flux<String> slowFlux = Flux.just("tortoise", "snail", "sloth").delaySubscription(Duration.ofMillis(100));
         Flux<String> fastFlux = Flux.just("hare", "cheetah", "squirrel");
 
+        // Only the values from the flux which starts publishing first will appear.
         Flux<String> firstFlux = Flux.first(slowFlux, fastFlux);
 
         StepVerifier.create(firstFlux)
