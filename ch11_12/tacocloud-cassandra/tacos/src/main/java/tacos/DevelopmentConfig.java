@@ -11,7 +11,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import tacos.Ingredient.Type;
 import tacos.data.IngredientRepository;
 import tacos.data.PaymentMethodRepository;
-import tacos.data.TacoRepository;
 import tacos.data.UserRepository;
 
 @Profile("!prod")

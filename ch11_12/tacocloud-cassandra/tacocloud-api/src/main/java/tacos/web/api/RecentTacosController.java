@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import reactor.core.publisher.Flux;
 import tacos.Taco;
-import tacos.data.TacoRepository;
 
 @RepositoryRestController
 public class RecentTacosController {
