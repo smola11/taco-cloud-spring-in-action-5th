@@ -17,16 +17,18 @@ import lombok.Data;
 @Document
 public class Taco {
 
-  @Id
-  private String id;
-  
-  @NotNull
-  @Size(min = 5, message = "Name must be at least 5 characters long")
-  private String name;
-  
-  private Date createdAt = new Date();
-  
-  @Size(min=1, message="You must choose at least 1 ingredient")
-  private List<Ingredient> ingredients;
+    // By choosing String, you get a database-managed ID assignment and needn’t worry about
+    // setting that property manually.
+    @Id
+    private String id;
+
+    @NotNull
+    @Size(min = 5, message = "Name must be at least 5 characters long")
+    private String name;
+
+    private Date createdAt = new Date();
+
+    @Size(min = 1, message = "You must choose at least 1 ingredient")
+    private List<Ingredient> ingredients;
 
 }
